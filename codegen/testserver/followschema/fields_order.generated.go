@@ -113,6 +113,10 @@ var fieldsOrderPayloadImplementors = []string{"FieldsOrderPayload"}
 
 func (ec *executionContext) _FieldsOrderPayload(ctx context.Context, sel ast.SelectionSet, obj *FieldsOrderPayload) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, fieldsOrderPayloadImplementors)
+	return ec._marshalFieldsOrderPayload(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalFieldsOrderPayload(ctx context.Context, fields []graphql.CollectedField, obj *FieldsOrderPayload) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -158,6 +162,10 @@ func (ec *executionContext) marshalNFieldsOrderPayload2githubᚗcomᚋ99designs�
 	return ec._FieldsOrderPayload(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalNFieldsOrderPayload2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐFieldsOrderPayloadWithFields(ctx context.Context, fields []graphql.CollectedField, v FieldsOrderPayload) graphql.Marshaler {
+	return ec._marshalFieldsOrderPayload(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalNFieldsOrderPayload2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐFieldsOrderPayload(ctx context.Context, sel ast.SelectionSet, v *FieldsOrderPayload) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -166,6 +174,16 @@ func (ec *executionContext) marshalNFieldsOrderPayload2ᚖgithubᚗcomᚋ99desig
 		return graphql.Null
 	}
 	return ec._FieldsOrderPayload(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalNFieldsOrderPayload2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐFieldsOrderPayloadWithFields(ctx context.Context, fields []graphql.CollectedField, v *FieldsOrderPayload) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalFieldsOrderPayload(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

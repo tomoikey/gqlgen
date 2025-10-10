@@ -1054,6 +1054,10 @@ var backedByInterfaceImplementors = []string{"BackedByInterface"}
 
 func (ec *executionContext) _BackedByInterface(ctx context.Context, sel ast.SelectionSet, obj BackedByInterface) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, backedByInterfaceImplementors)
+	return ec._marshalBackedByInterface(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalBackedByInterface(ctx context.Context, fields []graphql.CollectedField, obj BackedByInterface) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -1134,6 +1138,10 @@ var catImplementors = []string{"Cat", "Animal"}
 
 func (ec *executionContext) _Cat(ctx context.Context, sel ast.SelectionSet, obj *Cat) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, catImplementors)
+	return ec._marshalCat(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalCat(ctx context.Context, fields []graphql.CollectedField, obj *Cat) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -1183,6 +1191,10 @@ var circleImplementors = []string{"Circle", "Shape", "ShapeUnion"}
 
 func (ec *executionContext) _Circle(ctx context.Context, sel ast.SelectionSet, obj *Circle) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, circleImplementors)
+	return ec._marshalCircle(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalCircle(ctx context.Context, fields []graphql.CollectedField, obj *Circle) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -1223,6 +1235,10 @@ var concreteNodeAImplementors = []string{"ConcreteNodeA", "Node"}
 
 func (ec *executionContext) _ConcreteNodeA(ctx context.Context, sel ast.SelectionSet, obj *ConcreteNodeA) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, concreteNodeAImplementors)
+	return ec._marshalConcreteNodeA(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalConcreteNodeA(ctx context.Context, fields []graphql.CollectedField, obj *ConcreteNodeA) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -1272,6 +1288,10 @@ var concreteNodeInterfaceImplementors = []string{"ConcreteNodeInterface", "Node"
 
 func (ec *executionContext) _ConcreteNodeInterface(ctx context.Context, sel ast.SelectionSet, obj ConcreteNodeInterface) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, concreteNodeInterfaceImplementors)
+	return ec._marshalConcreteNodeInterface(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalConcreteNodeInterface(ctx context.Context, fields []graphql.CollectedField, obj ConcreteNodeInterface) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -1316,6 +1336,10 @@ var coordinatesImplementors = []string{"Coordinates"}
 
 func (ec *executionContext) _Coordinates(ctx context.Context, sel ast.SelectionSet, obj *Coordinates) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, coordinatesImplementors)
+	return ec._marshalCoordinates(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalCoordinates(ctx context.Context, fields []graphql.CollectedField, obj *Coordinates) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -1360,6 +1384,10 @@ var dogImplementors = []string{"Dog", "Animal"}
 
 func (ec *executionContext) _Dog(ctx context.Context, sel ast.SelectionSet, obj *Dog) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, dogImplementors)
+	return ec._marshalDog(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalDog(ctx context.Context, fields []graphql.CollectedField, obj *Dog) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -1409,6 +1437,10 @@ var horseImplementors = []string{"Horse", "Mammalian", "Animal"}
 
 func (ec *executionContext) _Horse(ctx context.Context, sel ast.SelectionSet, obj *Horse) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, horseImplementors)
+	return ec._marshalHorse(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalHorse(ctx context.Context, fields []graphql.CollectedField, obj *Horse) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -1458,6 +1490,10 @@ var rectangleImplementors = []string{"Rectangle", "Shape", "ShapeUnion"}
 
 func (ec *executionContext) _Rectangle(ctx context.Context, sel ast.SelectionSet, obj *Rectangle) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, rectangleImplementors)
+	return ec._marshalRectangle(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalRectangle(ctx context.Context, fields []graphql.CollectedField, obj *Rectangle) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -1500,6 +1536,10 @@ var sizeImplementors = []string{"Size"}
 
 func (ec *executionContext) _Size(ctx context.Context, sel ast.SelectionSet, obj *Size) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, sizeImplementors)
+	return ec._marshalSize(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalSize(ctx context.Context, fields []graphql.CollectedField, obj *Size) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -1574,6 +1614,16 @@ func (ec *executionContext) marshalNSize2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋ
 	return ec._Size(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNSize2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐSizeWithFields(ctx context.Context, fields []graphql.CollectedField, v *Size) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalSize(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalOAnimal2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐAnimal(ctx context.Context, sel ast.SelectionSet, v Animal) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
@@ -1588,6 +1638,10 @@ func (ec *executionContext) marshalOBackedByInterface2githubᚗcomᚋ99designs�
 	return ec._BackedByInterface(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalOBackedByInterface2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐBackedByInterfaceWithFields(ctx context.Context, fields []graphql.CollectedField, v BackedByInterface) graphql.Marshaler {
+	return ec._marshalBackedByInterface(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalOCircle2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCircle(ctx context.Context, sel ast.SelectionSet, v *Circle) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
@@ -1595,8 +1649,19 @@ func (ec *executionContext) marshalOCircle2ᚖgithubᚗcomᚋ99designsᚋgqlgen�
 	return ec._Circle(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalOCircle2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCircleWithFields(ctx context.Context, fields []graphql.CollectedField, v *Circle) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalCircle(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalOCoordinates2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCoordinates(ctx context.Context, sel ast.SelectionSet, v Coordinates) graphql.Marshaler {
 	return ec._Coordinates(ctx, sel, &v)
+}
+
+func (ec *executionContext) _marshalOCoordinates2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCoordinatesWithFields(ctx context.Context, fields []graphql.CollectedField, v Coordinates) graphql.Marshaler {
+	return ec._marshalCoordinates(ctx, fields, &v)
 }
 
 func (ec *executionContext) marshalODog2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐDog(ctx context.Context, sel ast.SelectionSet, v *Dog) graphql.Marshaler {
@@ -1604,6 +1669,13 @@ func (ec *executionContext) marshalODog2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋc
 		return graphql.Null
 	}
 	return ec._Dog(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalODog2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐDogWithFields(ctx context.Context, fields []graphql.CollectedField, v *Dog) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalDog(ctx, fields, v)
 }
 
 func (ec *executionContext) marshalOShape2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐShape(ctx context.Context, sel ast.SelectionSet, v Shape) graphql.Marshaler {

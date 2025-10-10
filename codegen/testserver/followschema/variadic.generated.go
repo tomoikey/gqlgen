@@ -96,6 +96,10 @@ var variadicModelImplementors = []string{"VariadicModel"}
 
 func (ec *executionContext) _VariadicModel(ctx context.Context, sel ast.SelectionSet, obj *VariadicModel) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, variadicModelImplementors)
+	return ec._marshalVariadicModel(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalVariadicModel(ctx context.Context, fields []graphql.CollectedField, obj *VariadicModel) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -168,6 +172,13 @@ func (ec *executionContext) marshalOVariadicModel2ᚖgithubᚗcomᚋ99designsᚋ
 		return graphql.Null
 	}
 	return ec._VariadicModel(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOVariadicModel2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐVariadicModelWithFields(ctx context.Context, fields []graphql.CollectedField, v *VariadicModel) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalVariadicModel(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

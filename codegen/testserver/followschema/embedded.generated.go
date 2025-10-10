@@ -135,6 +135,10 @@ var embeddedCase1Implementors = []string{"EmbeddedCase1"}
 
 func (ec *executionContext) _EmbeddedCase1(ctx context.Context, sel ast.SelectionSet, obj *EmbeddedCase1) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, embeddedCase1Implementors)
+	return ec._marshalEmbeddedCase1(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalEmbeddedCase1(ctx context.Context, fields []graphql.CollectedField, obj *EmbeddedCase1) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -174,6 +178,10 @@ var embeddedCase2Implementors = []string{"EmbeddedCase2"}
 
 func (ec *executionContext) _EmbeddedCase2(ctx context.Context, sel ast.SelectionSet, obj *EmbeddedCase2) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, embeddedCase2Implementors)
+	return ec._marshalEmbeddedCase2(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalEmbeddedCase2(ctx context.Context, fields []graphql.CollectedField, obj *EmbeddedCase2) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -213,6 +221,10 @@ var embeddedCase3Implementors = []string{"EmbeddedCase3"}
 
 func (ec *executionContext) _EmbeddedCase3(ctx context.Context, sel ast.SelectionSet, obj *EmbeddedCase3) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, embeddedCase3Implementors)
+	return ec._marshalEmbeddedCase3(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalEmbeddedCase3(ctx context.Context, fields []graphql.CollectedField, obj *EmbeddedCase3) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -259,6 +271,13 @@ func (ec *executionContext) marshalOEmbeddedCase12ᚖgithubᚗcomᚋ99designsᚋ
 	return ec._EmbeddedCase1(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalOEmbeddedCase12ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐEmbeddedCase1WithFields(ctx context.Context, fields []graphql.CollectedField, v *EmbeddedCase1) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalEmbeddedCase1(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalOEmbeddedCase22ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐEmbeddedCase2(ctx context.Context, sel ast.SelectionSet, v *EmbeddedCase2) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
@@ -266,11 +285,25 @@ func (ec *executionContext) marshalOEmbeddedCase22ᚖgithubᚗcomᚋ99designsᚋ
 	return ec._EmbeddedCase2(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalOEmbeddedCase22ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐEmbeddedCase2WithFields(ctx context.Context, fields []graphql.CollectedField, v *EmbeddedCase2) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalEmbeddedCase2(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalOEmbeddedCase32ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐEmbeddedCase3(ctx context.Context, sel ast.SelectionSet, v *EmbeddedCase3) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return ec._EmbeddedCase3(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOEmbeddedCase32ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐEmbeddedCase3WithFields(ctx context.Context, fields []graphql.CollectedField, v *EmbeddedCase3) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalEmbeddedCase3(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

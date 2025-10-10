@@ -187,6 +187,10 @@ var panicsImplementors = []string{"Panics"}
 
 func (ec *executionContext) _Panics(ctx context.Context, sel ast.SelectionSet, obj *Panics) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, panicsImplementors)
+	return ec._marshalPanics(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalPanics(ctx context.Context, fields []graphql.CollectedField, obj *Panics) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -374,6 +378,13 @@ func (ec *executionContext) marshalOPanics2ᚖgithubᚗcomᚋ99designsᚋgqlgen�
 		return graphql.Null
 	}
 	return ec._Panics(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOPanics2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPanicsWithFields(ctx context.Context, fields []graphql.CollectedField, v *Panics) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalPanics(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

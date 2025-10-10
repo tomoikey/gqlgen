@@ -5730,6 +5730,10 @@ var femaleImplementors = []string{"Female", "Gender"}
 
 func (ec *executionContext) _Female(ctx context.Context, sel ast.SelectionSet, obj *model.Female) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, femaleImplementors)
+	return ec._marshalFemale(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalFemale(ctx context.Context, fields []graphql.CollectedField, obj *model.Female) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -5769,6 +5773,10 @@ var helloImplementors = []string{"Hello", "_Entity"}
 
 func (ec *executionContext) _Hello(ctx context.Context, sel ast.SelectionSet, obj *model.Hello) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, helloImplementors)
+	return ec._marshalHello(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalHello(ctx context.Context, fields []graphql.CollectedField, obj *model.Hello) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -5813,6 +5821,10 @@ var helloMultiSingleKeysImplementors = []string{"HelloMultiSingleKeys", "_Entity
 
 func (ec *executionContext) _HelloMultiSingleKeys(ctx context.Context, sel ast.SelectionSet, obj *model.HelloMultiSingleKeys) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, helloMultiSingleKeysImplementors)
+	return ec._marshalHelloMultiSingleKeys(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalHelloMultiSingleKeys(ctx context.Context, fields []graphql.CollectedField, obj *model.HelloMultiSingleKeys) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -5857,6 +5869,10 @@ var helloWithErrorsImplementors = []string{"HelloWithErrors", "_Entity"}
 
 func (ec *executionContext) _HelloWithErrors(ctx context.Context, sel ast.SelectionSet, obj *model.HelloWithErrors) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, helloWithErrorsImplementors)
+	return ec._marshalHelloWithErrors(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalHelloWithErrors(ctx context.Context, fields []graphql.CollectedField, obj *model.HelloWithErrors) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -5896,6 +5912,10 @@ var maleImplementors = []string{"Male", "Gender"}
 
 func (ec *executionContext) _Male(ctx context.Context, sel ast.SelectionSet, obj *model.Male) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, maleImplementors)
+	return ec._marshalMale(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalMale(ctx context.Context, fields []graphql.CollectedField, obj *model.Male) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -5935,6 +5955,10 @@ var multiHelloImplementors = []string{"MultiHello", "_Entity"}
 
 func (ec *executionContext) _MultiHello(ctx context.Context, sel ast.SelectionSet, obj *model.MultiHello) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, multiHelloImplementors)
+	return ec._marshalMultiHello(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalMultiHello(ctx context.Context, fields []graphql.CollectedField, obj *model.MultiHello) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -5974,6 +5998,10 @@ var multiHelloMultipleRequiresImplementors = []string{"MultiHelloMultipleRequire
 
 func (ec *executionContext) _MultiHelloMultipleRequires(ctx context.Context, sel ast.SelectionSet, obj *model.MultiHelloMultipleRequires) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, multiHelloMultipleRequiresImplementors)
+	return ec._marshalMultiHelloMultipleRequires(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalMultiHelloMultipleRequires(ctx context.Context, fields []graphql.CollectedField, obj *model.MultiHelloMultipleRequires) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6059,6 +6087,10 @@ var multiHelloRequiresImplementors = []string{"MultiHelloRequires", "_Entity"}
 
 func (ec *executionContext) _MultiHelloRequires(ctx context.Context, sel ast.SelectionSet, obj *model.MultiHelloRequires) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, multiHelloRequiresImplementors)
+	return ec._marshalMultiHelloRequires(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalMultiHelloRequires(ctx context.Context, fields []graphql.CollectedField, obj *model.MultiHelloRequires) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6139,6 +6171,10 @@ var multiHelloWithErrorImplementors = []string{"MultiHelloWithError", "_Entity"}
 
 func (ec *executionContext) _MultiHelloWithError(ctx context.Context, sel ast.SelectionSet, obj *model.MultiHelloWithError) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, multiHelloWithErrorImplementors)
+	return ec._marshalMultiHelloWithError(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalMultiHelloWithError(ctx context.Context, fields []graphql.CollectedField, obj *model.MultiHelloWithError) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6178,6 +6214,10 @@ var multiPlanetRequiresNestedImplementors = []string{"MultiPlanetRequiresNested"
 
 func (ec *executionContext) _MultiPlanetRequiresNested(ctx context.Context, sel ast.SelectionSet, obj *model.MultiPlanetRequiresNested) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, multiPlanetRequiresNestedImplementors)
+	return ec._marshalMultiPlanetRequiresNested(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalMultiPlanetRequiresNested(ctx context.Context, fields []graphql.CollectedField, obj *model.MultiPlanetRequiresNested) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6293,6 +6333,10 @@ var personImplementors = []string{"Person", "_Entity"}
 
 func (ec *executionContext) _Person(ctx context.Context, sel ast.SelectionSet, obj *model.Person) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, personImplementors)
+	return ec._marshalPerson(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalPerson(ctx context.Context, fields []graphql.CollectedField, obj *model.Person) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6370,6 +6414,10 @@ var planetMultipleRequiresImplementors = []string{"PlanetMultipleRequires", "_En
 
 func (ec *executionContext) _PlanetMultipleRequires(ctx context.Context, sel ast.SelectionSet, obj *model.PlanetMultipleRequires) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, planetMultipleRequiresImplementors)
+	return ec._marshalPlanetMultipleRequires(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalPlanetMultipleRequires(ctx context.Context, fields []graphql.CollectedField, obj *model.PlanetMultipleRequires) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6457,6 +6505,10 @@ var planetRequiresImplementors = []string{"PlanetRequires", "_Entity"}
 
 func (ec *executionContext) _PlanetRequires(ctx context.Context, sel ast.SelectionSet, obj *model.PlanetRequires) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, planetRequiresImplementors)
+	return ec._marshalPlanetRequires(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalPlanetRequires(ctx context.Context, fields []graphql.CollectedField, obj *model.PlanetRequires) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6537,6 +6589,10 @@ var planetRequiresNestedImplementors = []string{"PlanetRequiresNested", "_Entity
 
 func (ec *executionContext) _PlanetRequiresNested(ctx context.Context, sel ast.SelectionSet, obj *model.PlanetRequiresNested) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, planetRequiresNestedImplementors)
+	return ec._marshalPlanetRequiresNested(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalPlanetRequiresNested(ctx context.Context, fields []graphql.CollectedField, obj *model.PlanetRequiresNested) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6765,6 +6821,10 @@ var worldImplementors = []string{"World", "_Entity"}
 
 func (ec *executionContext) _World(ctx context.Context, sel ast.SelectionSet, obj *model.World) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, worldImplementors)
+	return ec._marshalWorld(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalWorld(ctx context.Context, fields []graphql.CollectedField, obj *model.World) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6811,6 +6871,10 @@ var worldNameImplementors = []string{"WorldName", "_Entity"}
 
 func (ec *executionContext) _WorldName(ctx context.Context, sel ast.SelectionSet, obj *model.WorldName) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, worldNameImplementors)
+	return ec._marshalWorldName(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalWorldName(ctx context.Context, fields []graphql.CollectedField, obj *model.WorldName) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6850,6 +6914,10 @@ var worldWithMultipleKeysImplementors = []string{"WorldWithMultipleKeys", "_Enti
 
 func (ec *executionContext) _WorldWithMultipleKeys(ctx context.Context, sel ast.SelectionSet, obj *model.WorldWithMultipleKeys) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, worldWithMultipleKeysImplementors)
+	return ec._marshalWorldWithMultipleKeys(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalWorldWithMultipleKeys(ctx context.Context, fields []graphql.CollectedField, obj *model.WorldWithMultipleKeys) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6896,6 +6964,10 @@ var _ServiceImplementors = []string{"_Service"}
 
 func (ec *executionContext) __Service(ctx context.Context, sel ast.SelectionSet, obj *fedruntime.Service) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, _ServiceImplementors)
+	return ec._marshal_Service(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshal_Service(ctx context.Context, fields []graphql.CollectedField, obj *fedruntime.Service) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6932,6 +7004,10 @@ var __DirectiveImplementors = []string{"__Directive"}
 
 func (ec *executionContext) ___Directive(ctx context.Context, sel ast.SelectionSet, obj *introspection.Directive) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, __DirectiveImplementors)
+	return ec._marshal__Directive(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshal__Directive(ctx context.Context, fields []graphql.CollectedField, obj *introspection.Directive) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -6988,6 +7064,10 @@ var __EnumValueImplementors = []string{"__EnumValue"}
 
 func (ec *executionContext) ___EnumValue(ctx context.Context, sel ast.SelectionSet, obj *introspection.EnumValue) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, __EnumValueImplementors)
+	return ec._marshal__EnumValue(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshal__EnumValue(ctx context.Context, fields []graphql.CollectedField, obj *introspection.EnumValue) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -7036,6 +7116,10 @@ var __FieldImplementors = []string{"__Field"}
 
 func (ec *executionContext) ___Field(ctx context.Context, sel ast.SelectionSet, obj *introspection.Field) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, __FieldImplementors)
+	return ec._marshal__Field(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshal__Field(ctx context.Context, fields []graphql.CollectedField, obj *introspection.Field) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -7094,6 +7178,10 @@ var __InputValueImplementors = []string{"__InputValue"}
 
 func (ec *executionContext) ___InputValue(ctx context.Context, sel ast.SelectionSet, obj *introspection.InputValue) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, __InputValueImplementors)
+	return ec._marshal__InputValue(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshal__InputValue(ctx context.Context, fields []graphql.CollectedField, obj *introspection.InputValue) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -7149,6 +7237,10 @@ var __SchemaImplementors = []string{"__Schema"}
 
 func (ec *executionContext) ___Schema(ctx context.Context, sel ast.SelectionSet, obj *introspection.Schema) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, __SchemaImplementors)
+	return ec._marshal__Schema(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshal__Schema(ctx context.Context, fields []graphql.CollectedField, obj *introspection.Schema) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -7204,6 +7296,10 @@ var __TypeImplementors = []string{"__Type"}
 
 func (ec *executionContext) ___Type(ctx context.Context, sel ast.SelectionSet, obj *introspection.Type) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, __TypeImplementors)
+	return ec._marshal__Type(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshal__Type(ctx context.Context, fields []graphql.CollectedField, obj *introspection.Type) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -7309,6 +7405,10 @@ func (ec *executionContext) marshalNHello2githubᚗcomᚋ99designsᚋgqlgenᚋpl
 	return ec._Hello(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalNHello2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloWithFields(ctx context.Context, fields []graphql.CollectedField, v model.Hello) graphql.Marshaler {
+	return ec._marshalHello(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalNHello2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHello(ctx context.Context, sel ast.SelectionSet, v *model.Hello) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -7319,8 +7419,22 @@ func (ec *executionContext) marshalNHello2ᚖgithubᚗcomᚋ99designsᚋgqlgen�
 	return ec._Hello(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNHello2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.Hello) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalHello(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalNHelloMultiSingleKeys2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloMultiSingleKeys(ctx context.Context, sel ast.SelectionSet, v model.HelloMultiSingleKeys) graphql.Marshaler {
 	return ec._HelloMultiSingleKeys(ctx, sel, &v)
+}
+
+func (ec *executionContext) _marshalNHelloMultiSingleKeys2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloMultiSingleKeysWithFields(ctx context.Context, fields []graphql.CollectedField, v model.HelloMultiSingleKeys) graphql.Marshaler {
+	return ec._marshalHelloMultiSingleKeys(ctx, fields, &v)
 }
 
 func (ec *executionContext) marshalNHelloMultiSingleKeys2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloMultiSingleKeys(ctx context.Context, sel ast.SelectionSet, v *model.HelloMultiSingleKeys) graphql.Marshaler {
@@ -7333,8 +7447,22 @@ func (ec *executionContext) marshalNHelloMultiSingleKeys2ᚖgithubᚗcomᚋ99des
 	return ec._HelloMultiSingleKeys(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNHelloMultiSingleKeys2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloMultiSingleKeysWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.HelloMultiSingleKeys) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalHelloMultiSingleKeys(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalNHelloWithErrors2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloWithErrors(ctx context.Context, sel ast.SelectionSet, v model.HelloWithErrors) graphql.Marshaler {
 	return ec._HelloWithErrors(ctx, sel, &v)
+}
+
+func (ec *executionContext) _marshalNHelloWithErrors2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloWithErrorsWithFields(ctx context.Context, fields []graphql.CollectedField, v model.HelloWithErrors) graphql.Marshaler {
+	return ec._marshalHelloWithErrors(ctx, fields, &v)
 }
 
 func (ec *executionContext) marshalNHelloWithErrors2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloWithErrors(ctx context.Context, sel ast.SelectionSet, v *model.HelloWithErrors) graphql.Marshaler {
@@ -7345,6 +7473,16 @@ func (ec *executionContext) marshalNHelloWithErrors2ᚖgithubᚗcomᚋ99designs�
 		return graphql.Null
 	}
 	return ec._HelloWithErrors(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalNHelloWithErrors2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloWithErrorsWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.HelloWithErrors) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalHelloWithErrors(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalNInt2int(ctx context.Context, v any) (int, error) {
@@ -7442,6 +7580,10 @@ func (ec *executionContext) marshalNPerson2githubᚗcomᚋ99designsᚋgqlgenᚋp
 	return ec._Person(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalNPerson2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPersonWithFields(ctx context.Context, fields []graphql.CollectedField, v model.Person) graphql.Marshaler {
+	return ec._marshalPerson(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalNPerson2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPerson(ctx context.Context, sel ast.SelectionSet, v *model.Person) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -7452,8 +7594,22 @@ func (ec *executionContext) marshalNPerson2ᚖgithubᚗcomᚋ99designsᚋgqlgen�
 	return ec._Person(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNPerson2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPersonWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.Person) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalPerson(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalNPlanetMultipleRequires2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetMultipleRequires(ctx context.Context, sel ast.SelectionSet, v model.PlanetMultipleRequires) graphql.Marshaler {
 	return ec._PlanetMultipleRequires(ctx, sel, &v)
+}
+
+func (ec *executionContext) _marshalNPlanetMultipleRequires2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetMultipleRequiresWithFields(ctx context.Context, fields []graphql.CollectedField, v model.PlanetMultipleRequires) graphql.Marshaler {
+	return ec._marshalPlanetMultipleRequires(ctx, fields, &v)
 }
 
 func (ec *executionContext) marshalNPlanetMultipleRequires2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetMultipleRequires(ctx context.Context, sel ast.SelectionSet, v *model.PlanetMultipleRequires) graphql.Marshaler {
@@ -7466,8 +7622,22 @@ func (ec *executionContext) marshalNPlanetMultipleRequires2ᚖgithubᚗcomᚋ99d
 	return ec._PlanetMultipleRequires(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNPlanetMultipleRequires2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetMultipleRequiresWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.PlanetMultipleRequires) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalPlanetMultipleRequires(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalNPlanetRequires2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetRequires(ctx context.Context, sel ast.SelectionSet, v model.PlanetRequires) graphql.Marshaler {
 	return ec._PlanetRequires(ctx, sel, &v)
+}
+
+func (ec *executionContext) _marshalNPlanetRequires2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetRequiresWithFields(ctx context.Context, fields []graphql.CollectedField, v model.PlanetRequires) graphql.Marshaler {
+	return ec._marshalPlanetRequires(ctx, fields, &v)
 }
 
 func (ec *executionContext) marshalNPlanetRequires2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetRequires(ctx context.Context, sel ast.SelectionSet, v *model.PlanetRequires) graphql.Marshaler {
@@ -7480,8 +7650,22 @@ func (ec *executionContext) marshalNPlanetRequires2ᚖgithubᚗcomᚋ99designs�
 	return ec._PlanetRequires(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNPlanetRequires2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetRequiresWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.PlanetRequires) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalPlanetRequires(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalNPlanetRequiresNested2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetRequiresNested(ctx context.Context, sel ast.SelectionSet, v model.PlanetRequiresNested) graphql.Marshaler {
 	return ec._PlanetRequiresNested(ctx, sel, &v)
+}
+
+func (ec *executionContext) _marshalNPlanetRequiresNested2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetRequiresNestedWithFields(ctx context.Context, fields []graphql.CollectedField, v model.PlanetRequiresNested) graphql.Marshaler {
+	return ec._marshalPlanetRequiresNested(ctx, fields, &v)
 }
 
 func (ec *executionContext) marshalNPlanetRequiresNested2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetRequiresNested(ctx context.Context, sel ast.SelectionSet, v *model.PlanetRequiresNested) graphql.Marshaler {
@@ -7492,6 +7676,16 @@ func (ec *executionContext) marshalNPlanetRequiresNested2ᚖgithubᚗcomᚋ99des
 		return graphql.Null
 	}
 	return ec._PlanetRequiresNested(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalNPlanetRequiresNested2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐPlanetRequiresNestedWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.PlanetRequiresNested) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalPlanetRequiresNested(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalNString2string(ctx context.Context, v any) (string, error) {
@@ -7514,6 +7708,10 @@ func (ec *executionContext) marshalNWorld2githubᚗcomᚋ99designsᚋgqlgenᚋpl
 	return ec._World(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalNWorld2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldWithFields(ctx context.Context, fields []graphql.CollectedField, v model.World) graphql.Marshaler {
+	return ec._marshalWorld(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalNWorld2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorld(ctx context.Context, sel ast.SelectionSet, v *model.World) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -7524,8 +7722,22 @@ func (ec *executionContext) marshalNWorld2ᚖgithubᚗcomᚋ99designsᚋgqlgen�
 	return ec._World(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNWorld2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.World) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalWorld(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalNWorldName2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldName(ctx context.Context, sel ast.SelectionSet, v model.WorldName) graphql.Marshaler {
 	return ec._WorldName(ctx, sel, &v)
+}
+
+func (ec *executionContext) _marshalNWorldName2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldNameWithFields(ctx context.Context, fields []graphql.CollectedField, v model.WorldName) graphql.Marshaler {
+	return ec._marshalWorldName(ctx, fields, &v)
 }
 
 func (ec *executionContext) marshalNWorldName2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldName(ctx context.Context, sel ast.SelectionSet, v *model.WorldName) graphql.Marshaler {
@@ -7538,8 +7750,22 @@ func (ec *executionContext) marshalNWorldName2ᚖgithubᚗcomᚋ99designsᚋgqlg
 	return ec._WorldName(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNWorldName2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldNameWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.WorldName) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalWorldName(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalNWorldWithMultipleKeys2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldWithMultipleKeys(ctx context.Context, sel ast.SelectionSet, v model.WorldWithMultipleKeys) graphql.Marshaler {
 	return ec._WorldWithMultipleKeys(ctx, sel, &v)
+}
+
+func (ec *executionContext) _marshalNWorldWithMultipleKeys2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldWithMultipleKeysWithFields(ctx context.Context, fields []graphql.CollectedField, v model.WorldWithMultipleKeys) graphql.Marshaler {
+	return ec._marshalWorldWithMultipleKeys(ctx, fields, &v)
 }
 
 func (ec *executionContext) marshalNWorldWithMultipleKeys2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldWithMultipleKeys(ctx context.Context, sel ast.SelectionSet, v *model.WorldWithMultipleKeys) graphql.Marshaler {
@@ -7550,6 +7776,16 @@ func (ec *executionContext) marshalNWorldWithMultipleKeys2ᚖgithubᚗcomᚋ99de
 		return graphql.Null
 	}
 	return ec._WorldWithMultipleKeys(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalNWorldWithMultipleKeys2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldWithMultipleKeysWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.WorldWithMultipleKeys) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalWorldWithMultipleKeys(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalN_Any2map(ctx context.Context, v any) (map[string]any, error) {
@@ -7646,11 +7882,24 @@ func (ec *executionContext) marshalN_Service2githubᚗcomᚋ99designsᚋgqlgen�
 	return ec.__Service(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalN_Service2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋfedruntimeᚐServiceWithFields(ctx context.Context, fields []graphql.CollectedField, v fedruntime.Service) graphql.Marshaler {
+	return ec._marshal_Service(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalN__Directive2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐDirective(ctx context.Context, sel ast.SelectionSet, v introspection.Directive) graphql.Marshaler {
 	return ec.___Directive(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalN__Directive2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐDirectiveWithFields(ctx context.Context, fields []graphql.CollectedField, v introspection.Directive) graphql.Marshaler {
+	return ec._marshal__Directive(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalN__Directive2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐDirectiveᚄ(ctx context.Context, sel ast.SelectionSet, v []introspection.Directive) graphql.Marshaler {
+	fields := graphql.CollectFields(ec.OperationContext, sel, __DirectiveImplementors)
+	return ec._marshalN__Directive2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐDirectiveᚄWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalN__Directive2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐDirectiveᚄWithFields(ctx context.Context, fields []graphql.CollectedField, v []introspection.Directive) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -7674,14 +7923,13 @@ func (ec *executionContext) marshalN__Directive2ᚕgithubᚗcomᚋ99designsᚋgq
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalN__Directive2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐDirective(ctx, sel, v[i])
+			ret[i] = ec._marshalN__Directive2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐDirectiveWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -7773,15 +8021,32 @@ func (ec *executionContext) marshalN__EnumValue2githubᚗcomᚋ99designsᚋgqlge
 	return ec.___EnumValue(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalN__EnumValue2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐEnumValueWithFields(ctx context.Context, fields []graphql.CollectedField, v introspection.EnumValue) graphql.Marshaler {
+	return ec._marshal__EnumValue(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalN__Field2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐField(ctx context.Context, sel ast.SelectionSet, v introspection.Field) graphql.Marshaler {
 	return ec.___Field(ctx, sel, &v)
+}
+
+func (ec *executionContext) _marshalN__Field2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐFieldWithFields(ctx context.Context, fields []graphql.CollectedField, v introspection.Field) graphql.Marshaler {
+	return ec._marshal__Field(ctx, fields, &v)
 }
 
 func (ec *executionContext) marshalN__InputValue2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValue(ctx context.Context, sel ast.SelectionSet, v introspection.InputValue) graphql.Marshaler {
 	return ec.___InputValue(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalN__InputValue2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValueWithFields(ctx context.Context, fields []graphql.CollectedField, v introspection.InputValue) graphql.Marshaler {
+	return ec._marshal__InputValue(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalN__InputValue2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValueᚄ(ctx context.Context, sel ast.SelectionSet, v []introspection.InputValue) graphql.Marshaler {
+	fields := graphql.CollectFields(ec.OperationContext, sel, __InputValueImplementors)
+	return ec._marshalN__InputValue2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValueᚄWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalN__InputValue2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValueᚄWithFields(ctx context.Context, fields []graphql.CollectedField, v []introspection.InputValue) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -7805,14 +8070,13 @@ func (ec *executionContext) marshalN__InputValue2ᚕgithubᚗcomᚋ99designsᚋg
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalN__InputValue2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValue(ctx, sel, v[i])
+			ret[i] = ec._marshalN__InputValue2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValueWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -7829,7 +8093,16 @@ func (ec *executionContext) marshalN__Type2githubᚗcomᚋ99designsᚋgqlgenᚋg
 	return ec.___Type(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalN__Type2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeWithFields(ctx context.Context, fields []graphql.CollectedField, v introspection.Type) graphql.Marshaler {
+	return ec._marshal__Type(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalN__Type2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeᚄ(ctx context.Context, sel ast.SelectionSet, v []introspection.Type) graphql.Marshaler {
+	fields := graphql.CollectFields(ec.OperationContext, sel, __TypeImplementors)
+	return ec._marshalN__Type2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeᚄWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalN__Type2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeᚄWithFields(ctx context.Context, fields []graphql.CollectedField, v []introspection.Type) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -7853,14 +8126,13 @@ func (ec *executionContext) marshalN__Type2ᚕgithubᚗcomᚋ99designsᚋgqlgen�
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalN__Type2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐType(ctx, sel, v[i])
+			ret[i] = ec._marshalN__Type2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -7881,6 +8153,16 @@ func (ec *executionContext) marshalN__Type2ᚖgithubᚗcomᚋ99designsᚋgqlgen�
 		return graphql.Null
 	}
 	return ec.___Type(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalN__Type2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeWithFields(ctx context.Context, fields []graphql.CollectedField, v *introspection.Type) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshal__Type(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalN__TypeKind2string(ctx context.Context, v any) (string, error) {
@@ -8088,6 +8370,13 @@ func (ec *executionContext) marshalOHello2ᚖgithubᚗcomᚋ99designsᚋgqlgen�
 	return ec._Hello(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalOHello2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐHelloWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.Hello) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalHello(ctx, fields, v)
+}
+
 func (ec *executionContext) unmarshalOInt2ᚕintᚄ(ctx context.Context, v any) ([]int, error) {
 	if v == nil {
 		return nil, nil
@@ -8128,6 +8417,11 @@ func (ec *executionContext) marshalOMultiHello2ᚕᚖgithubᚗcomᚋ99designsᚋ
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, multiHelloImplementors)
+	return ec._marshalOMultiHello2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalOMultiHello2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloWithFields(ctx context.Context, fields []graphql.CollectedField, v []*model.MultiHello) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -8151,14 +8445,13 @@ func (ec *executionContext) marshalOMultiHello2ᚕᚖgithubᚗcomᚋ99designsᚋ
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalOMultiHello2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHello(ctx, sel, v[i])
+			ret[i] = ec._marshalOMultiHello2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -8170,6 +8463,13 @@ func (ec *executionContext) marshalOMultiHello2ᚖgithubᚗcomᚋ99designsᚋgql
 		return graphql.Null
 	}
 	return ec._MultiHello(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOMultiHello2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.MultiHello) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalMultiHello(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalOMultiHelloByNamesInput2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloByNamesInput(ctx context.Context, v any) (*model.MultiHelloByNamesInput, error) {
@@ -8184,6 +8484,11 @@ func (ec *executionContext) marshalOMultiHelloMultipleRequires2ᚕᚖgithubᚗco
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, multiHelloMultipleRequiresImplementors)
+	return ec._marshalOMultiHelloMultipleRequires2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloMultipleRequiresWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalOMultiHelloMultipleRequires2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloMultipleRequiresWithFields(ctx context.Context, fields []graphql.CollectedField, v []*model.MultiHelloMultipleRequires) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -8207,14 +8512,13 @@ func (ec *executionContext) marshalOMultiHelloMultipleRequires2ᚕᚖgithubᚗco
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalOMultiHelloMultipleRequires2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloMultipleRequires(ctx, sel, v[i])
+			ret[i] = ec._marshalOMultiHelloMultipleRequires2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloMultipleRequiresWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -8226,6 +8530,13 @@ func (ec *executionContext) marshalOMultiHelloMultipleRequires2ᚖgithubᚗcom�
 		return graphql.Null
 	}
 	return ec._MultiHelloMultipleRequires(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOMultiHelloMultipleRequires2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloMultipleRequiresWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.MultiHelloMultipleRequires) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalMultiHelloMultipleRequires(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalOMultiHelloMultipleRequiresByNamesInput2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloMultipleRequiresByNamesInput(ctx context.Context, v any) (*model.MultiHelloMultipleRequiresByNamesInput, error) {
@@ -8240,6 +8551,11 @@ func (ec *executionContext) marshalOMultiHelloRequires2ᚕᚖgithubᚗcomᚋ99de
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, multiHelloRequiresImplementors)
+	return ec._marshalOMultiHelloRequires2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloRequiresWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalOMultiHelloRequires2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloRequiresWithFields(ctx context.Context, fields []graphql.CollectedField, v []*model.MultiHelloRequires) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -8263,14 +8579,13 @@ func (ec *executionContext) marshalOMultiHelloRequires2ᚕᚖgithubᚗcomᚋ99de
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalOMultiHelloRequires2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloRequires(ctx, sel, v[i])
+			ret[i] = ec._marshalOMultiHelloRequires2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloRequiresWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -8282,6 +8597,13 @@ func (ec *executionContext) marshalOMultiHelloRequires2ᚖgithubᚗcomᚋ99desig
 		return graphql.Null
 	}
 	return ec._MultiHelloRequires(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOMultiHelloRequires2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloRequiresWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.MultiHelloRequires) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalMultiHelloRequires(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalOMultiHelloRequiresByNamesInput2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloRequiresByNamesInput(ctx context.Context, v any) (*model.MultiHelloRequiresByNamesInput, error) {
@@ -8296,6 +8618,11 @@ func (ec *executionContext) marshalOMultiHelloWithError2ᚕᚖgithubᚗcomᚋ99d
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, multiHelloWithErrorImplementors)
+	return ec._marshalOMultiHelloWithError2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloWithErrorWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalOMultiHelloWithError2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloWithErrorWithFields(ctx context.Context, fields []graphql.CollectedField, v []*model.MultiHelloWithError) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -8319,14 +8646,13 @@ func (ec *executionContext) marshalOMultiHelloWithError2ᚕᚖgithubᚗcomᚋ99d
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalOMultiHelloWithError2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloWithError(ctx, sel, v[i])
+			ret[i] = ec._marshalOMultiHelloWithError2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloWithErrorWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -8338,6 +8664,13 @@ func (ec *executionContext) marshalOMultiHelloWithError2ᚖgithubᚗcomᚋ99desi
 		return graphql.Null
 	}
 	return ec._MultiHelloWithError(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOMultiHelloWithError2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloWithErrorWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.MultiHelloWithError) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalMultiHelloWithError(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalOMultiHelloWithErrorByNamesInput2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiHelloWithErrorByNamesInput(ctx context.Context, v any) (*model.MultiHelloWithErrorByNamesInput, error) {
@@ -8352,6 +8685,11 @@ func (ec *executionContext) marshalOMultiPlanetRequiresNested2ᚕᚖgithubᚗcom
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, multiPlanetRequiresNestedImplementors)
+	return ec._marshalOMultiPlanetRequiresNested2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiPlanetRequiresNestedWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalOMultiPlanetRequiresNested2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiPlanetRequiresNestedWithFields(ctx context.Context, fields []graphql.CollectedField, v []*model.MultiPlanetRequiresNested) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -8375,14 +8713,13 @@ func (ec *executionContext) marshalOMultiPlanetRequiresNested2ᚕᚖgithubᚗcom
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalOMultiPlanetRequiresNested2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiPlanetRequiresNested(ctx, sel, v[i])
+			ret[i] = ec._marshalOMultiPlanetRequiresNested2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiPlanetRequiresNestedWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -8394,6 +8731,13 @@ func (ec *executionContext) marshalOMultiPlanetRequiresNested2ᚖgithubᚗcomᚋ
 		return graphql.Null
 	}
 	return ec._MultiPlanetRequiresNested(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOMultiPlanetRequiresNested2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiPlanetRequiresNestedWithFields(ctx context.Context, fields []graphql.CollectedField, v *model.MultiPlanetRequiresNested) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalMultiPlanetRequiresNested(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalOMultiPlanetRequiresNestedByNamesInput2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐMultiPlanetRequiresNestedByNamesInput(ctx context.Context, v any) (*model.MultiPlanetRequiresNestedByNamesInput, error) {
@@ -8474,6 +8818,11 @@ func (ec *executionContext) marshalOWorld2ᚕᚖgithubᚗcomᚋ99designsᚋgqlge
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, worldImplementors)
+	return ec._marshalOWorld2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldᚄWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalOWorld2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldᚄWithFields(ctx context.Context, fields []graphql.CollectedField, v []*model.World) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -8497,14 +8846,13 @@ func (ec *executionContext) marshalOWorld2ᚕᚖgithubᚗcomᚋ99designsᚋgqlge
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNWorld2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorld(ctx, sel, v[i])
+			ret[i] = ec._marshalNWorld2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋtestdataᚋcomputedrequiresᚋgeneratedᚋmodelsᚐWorldWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -8546,6 +8894,11 @@ func (ec *executionContext) marshalO__EnumValue2ᚕgithubᚗcomᚋ99designsᚋgq
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, __EnumValueImplementors)
+	return ec._marshalO__EnumValue2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐEnumValueᚄWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalO__EnumValue2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐEnumValueᚄWithFields(ctx context.Context, fields []graphql.CollectedField, v []introspection.EnumValue) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -8569,14 +8922,13 @@ func (ec *executionContext) marshalO__EnumValue2ᚕgithubᚗcomᚋ99designsᚋgq
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalN__EnumValue2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐEnumValue(ctx, sel, v[i])
+			ret[i] = ec._marshalN__EnumValue2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐEnumValueWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -8593,6 +8945,11 @@ func (ec *executionContext) marshalO__Field2ᚕgithubᚗcomᚋ99designsᚋgqlgen
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, __FieldImplementors)
+	return ec._marshalO__Field2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐFieldᚄWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalO__Field2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐFieldᚄWithFields(ctx context.Context, fields []graphql.CollectedField, v []introspection.Field) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -8616,14 +8973,13 @@ func (ec *executionContext) marshalO__Field2ᚕgithubᚗcomᚋ99designsᚋgqlgen
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalN__Field2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐField(ctx, sel, v[i])
+			ret[i] = ec._marshalN__Field2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐFieldWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -8640,6 +8996,11 @@ func (ec *executionContext) marshalO__InputValue2ᚕgithubᚗcomᚋ99designsᚋg
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, __InputValueImplementors)
+	return ec._marshalO__InputValue2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValueᚄWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalO__InputValue2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValueᚄWithFields(ctx context.Context, fields []graphql.CollectedField, v []introspection.InputValue) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -8663,14 +9024,13 @@ func (ec *executionContext) marshalO__InputValue2ᚕgithubᚗcomᚋ99designsᚋg
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalN__InputValue2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValue(ctx, sel, v[i])
+			ret[i] = ec._marshalN__InputValue2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐInputValueWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -8690,10 +9050,22 @@ func (ec *executionContext) marshalO__Schema2ᚖgithubᚗcomᚋ99designsᚋgqlge
 	return ec.___Schema(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalO__Schema2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐSchemaWithFields(ctx context.Context, fields []graphql.CollectedField, v *introspection.Schema) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshal__Schema(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalO__Type2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeᚄ(ctx context.Context, sel ast.SelectionSet, v []introspection.Type) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, __TypeImplementors)
+	return ec._marshalO__Type2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeᚄWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalO__Type2ᚕgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeᚄWithFields(ctx context.Context, fields []graphql.CollectedField, v []introspection.Type) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -8717,14 +9089,13 @@ func (ec *executionContext) marshalO__Type2ᚕgithubᚗcomᚋ99designsᚋgqlgen�
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalN__Type2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐType(ctx, sel, v[i])
+			ret[i] = ec._marshalN__Type2githubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -8742,6 +9113,13 @@ func (ec *executionContext) marshalO__Type2ᚖgithubᚗcomᚋ99designsᚋgqlgen�
 		return graphql.Null
 	}
 	return ec.___Type(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalO__Type2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐTypeWithFields(ctx context.Context, fields []graphql.CollectedField, v *introspection.Type) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshal__Type(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

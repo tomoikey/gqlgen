@@ -285,6 +285,10 @@ var ptrToPtrInnerImplementors = []string{"PtrToPtrInner"}
 
 func (ec *executionContext) _PtrToPtrInner(ctx context.Context, sel ast.SelectionSet, obj *PtrToPtrInner) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, ptrToPtrInnerImplementors)
+	return ec._marshalPtrToPtrInner(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalPtrToPtrInner(ctx context.Context, fields []graphql.CollectedField, obj *PtrToPtrInner) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -329,6 +333,10 @@ var ptrToPtrOuterImplementors = []string{"PtrToPtrOuter"}
 
 func (ec *executionContext) _PtrToPtrOuter(ctx context.Context, sel ast.SelectionSet, obj *PtrToPtrOuter) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, ptrToPtrOuterImplementors)
+	return ec._marshalPtrToPtrOuter(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalPtrToPtrOuter(ctx context.Context, fields []graphql.CollectedField, obj *PtrToPtrOuter) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -376,6 +384,10 @@ func (ec *executionContext) marshalNPtrToPtrOuter2githubᚗcomᚋ99designsᚋgql
 	return ec._PtrToPtrOuter(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalNPtrToPtrOuter2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToPtrOuterWithFields(ctx context.Context, fields []graphql.CollectedField, v PtrToPtrOuter) graphql.Marshaler {
+	return ec._marshalPtrToPtrOuter(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalNPtrToPtrOuter2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToPtrOuter(ctx context.Context, sel ast.SelectionSet, v *PtrToPtrOuter) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -384,6 +396,16 @@ func (ec *executionContext) marshalNPtrToPtrOuter2ᚖgithubᚗcomᚋ99designsᚋ
 		return graphql.Null
 	}
 	return ec._PtrToPtrOuter(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalNPtrToPtrOuter2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToPtrOuterWithFields(ctx context.Context, fields []graphql.CollectedField, v *PtrToPtrOuter) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalPtrToPtrOuter(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalNUpdatePtrToPtrOuter2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐUpdatePtrToPtrOuter(ctx context.Context, v any) (UpdatePtrToPtrOuter, error) {
@@ -396,6 +418,13 @@ func (ec *executionContext) marshalOPtrToPtrInner2ᚖgithubᚗcomᚋ99designsᚋ
 		return graphql.Null
 	}
 	return ec._PtrToPtrInner(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOPtrToPtrInner2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToPtrInnerWithFields(ctx context.Context, fields []graphql.CollectedField, v *PtrToPtrInner) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalPtrToPtrInner(ctx, fields, v)
 }
 
 func (ec *executionContext) marshalOPtrToPtrInner2ᚖᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToPtrInner(ctx context.Context, sel ast.SelectionSet, v **PtrToPtrInner) graphql.Marshaler {

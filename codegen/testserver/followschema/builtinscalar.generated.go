@@ -73,6 +73,10 @@ var mapImplementors = []string{"Map"}
 
 func (ec *executionContext) _Map(ctx context.Context, sel ast.SelectionSet, obj *Map) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, mapImplementors)
+	return ec._marshalMap(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalMap(ctx context.Context, fields []graphql.CollectedField, obj *Map) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)

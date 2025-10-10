@@ -74,6 +74,10 @@ var checkIssue896Implementors = []string{"CheckIssue896"}
 
 func (ec *executionContext) _CheckIssue896(ctx context.Context, sel ast.SelectionSet, obj *CheckIssue896) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, checkIssue896Implementors)
+	return ec._marshalCheckIssue896(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalCheckIssue896(ctx context.Context, fields []graphql.CollectedField, obj *CheckIssue896) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -120,10 +124,25 @@ func (ec *executionContext) marshalNCheckIssue8962ᚖgithubᚗcomᚋ99designsᚋ
 	return ec._CheckIssue896(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNCheckIssue8962ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896WithFields(ctx context.Context, fields []graphql.CollectedField, v *CheckIssue896) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalCheckIssue896(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalOCheckIssue8962ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896(ctx context.Context, sel ast.SelectionSet, v []*CheckIssue896) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, checkIssue896Implementors)
+	return ec._marshalOCheckIssue8962ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896WithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalOCheckIssue8962ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896WithFields(ctx context.Context, fields []graphql.CollectedField, v []*CheckIssue896) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -147,14 +166,13 @@ func (ec *executionContext) marshalOCheckIssue8962ᚕᚖgithubᚗcomᚋ99designs
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalOCheckIssue8962ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896(ctx, sel, v[i])
+			ret[i] = ec._marshalOCheckIssue8962ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896WithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -165,6 +183,11 @@ func (ec *executionContext) marshalOCheckIssue8962ᚕᚖgithubᚗcomᚋ99designs
 	if v == nil {
 		return graphql.Null
 	}
+	fields := graphql.CollectFields(ec.OperationContext, sel, checkIssue896Implementors)
+	return ec._marshalOCheckIssue8962ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896ᚄWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalOCheckIssue8962ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896ᚄWithFields(ctx context.Context, fields []graphql.CollectedField, v []*CheckIssue896) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -188,14 +211,13 @@ func (ec *executionContext) marshalOCheckIssue8962ᚕᚖgithubᚗcomᚋ99designs
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNCheckIssue8962ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896(ctx, sel, v[i])
+			ret[i] = ec._marshalNCheckIssue8962ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896WithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -213,6 +235,13 @@ func (ec *executionContext) marshalOCheckIssue8962ᚖgithubᚗcomᚋ99designsᚋ
 		return graphql.Null
 	}
 	return ec._CheckIssue896(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOCheckIssue8962ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐCheckIssue896WithFields(ctx context.Context, fields []graphql.CollectedField, v *CheckIssue896) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalCheckIssue896(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

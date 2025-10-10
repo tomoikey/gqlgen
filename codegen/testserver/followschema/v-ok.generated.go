@@ -112,6 +112,10 @@ var vOkCaseNilImplementors = []string{"VOkCaseNil"}
 
 func (ec *executionContext) _VOkCaseNil(ctx context.Context, sel ast.SelectionSet, obj *VOkCaseNil) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, vOkCaseNilImplementors)
+	return ec._marshalVOkCaseNil(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalVOkCaseNil(ctx context.Context, fields []graphql.CollectedField, obj *VOkCaseNil) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -148,6 +152,10 @@ var vOkCaseValueImplementors = []string{"VOkCaseValue"}
 
 func (ec *executionContext) _VOkCaseValue(ctx context.Context, sel ast.SelectionSet, obj *VOkCaseValue) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, vOkCaseValueImplementors)
+	return ec._marshalVOkCaseValue(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalVOkCaseValue(ctx context.Context, fields []graphql.CollectedField, obj *VOkCaseValue) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -191,11 +199,25 @@ func (ec *executionContext) marshalOVOkCaseNil2ᚖgithubᚗcomᚋ99designsᚋgql
 	return ec._VOkCaseNil(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalOVOkCaseNil2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐVOkCaseNilWithFields(ctx context.Context, fields []graphql.CollectedField, v *VOkCaseNil) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalVOkCaseNil(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalOVOkCaseValue2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐVOkCaseValue(ctx context.Context, sel ast.SelectionSet, v *VOkCaseValue) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return ec._VOkCaseValue(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOVOkCaseValue2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐVOkCaseValueWithFields(ctx context.Context, fields []graphql.CollectedField, v *VOkCaseValue) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalVOkCaseValue(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************
