@@ -659,6 +659,10 @@ var pageInfoImplementors = []string{"PageInfo"}
 
 func (ec *executionContext) _PageInfo(ctx context.Context, sel ast.SelectionSet, obj *models.PageInfo) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, pageInfoImplementors)
+	return ec._marshalPageInfo(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalPageInfo(ctx context.Context, fields []graphql.CollectedField, obj *models.PageInfo) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -782,6 +786,10 @@ var userImplementors = []string{"User"}
 
 func (ec *executionContext) _User(ctx context.Context, sel ast.SelectionSet, obj *models.User) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, userImplementors)
+	return ec._marshalUser(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalUser(ctx context.Context, fields []graphql.CollectedField, obj *models.User) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -831,6 +839,10 @@ var userConnectionImplementors = []string{"UserConnection"}
 
 func (ec *executionContext) _UserConnection(ctx context.Context, sel ast.SelectionSet, obj *models.UserConnection) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, userConnectionImplementors)
+	return ec._marshalUserConnection(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalUserConnection(ctx context.Context, fields []graphql.CollectedField, obj *models.UserConnection) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -880,6 +892,10 @@ var userEdgeImplementors = []string{"UserEdge"}
 
 func (ec *executionContext) _UserEdge(ctx context.Context, sel ast.SelectionSet, obj *models.UserEdge) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, userEdgeImplementors)
+	return ec._marshalUserEdge(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalUserEdge(ctx context.Context, fields []graphql.CollectedField, obj *models.UserEdge) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -944,6 +960,16 @@ func (ec *executionContext) marshalNPageInfo2ᚖgithubᚗcomᚋ99designsᚋgqlge
 	return ec._PageInfo(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNPageInfo2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐPageInfoWithFields(ctx context.Context, fields []graphql.CollectedField, v *models.PageInfo) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalPageInfo(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐUser(ctx context.Context, sel ast.SelectionSet, v *models.User) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -954,7 +980,22 @@ func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋ
 	return ec._User(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNUser2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐUserWithFields(ctx context.Context, fields []graphql.CollectedField, v *models.User) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalUser(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalNUserEdge2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐUserEdgeᚄ(ctx context.Context, sel ast.SelectionSet, v []*models.UserEdge) graphql.Marshaler {
+	fields := graphql.CollectFields(ec.OperationContext, sel, userEdgeImplementors)
+	return ec._marshalNUserEdge2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐUserEdgeᚄWithFields(ctx, fields, v)
+}
+
+func (ec *executionContext) _marshalNUserEdge2ᚕᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐUserEdgeᚄWithFields(ctx context.Context, fields []graphql.CollectedField, v []*models.UserEdge) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -978,14 +1019,13 @@ func (ec *executionContext) marshalNUserEdge2ᚕᚖgithubᚗcomᚋ99designsᚋgq
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNUserEdge2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐUserEdge(ctx, sel, v[i])
+			ret[i] = ec._marshalNUserEdge2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐUserEdgeWithFields(ctx, fields, v[i])
 		}
 		if isLen1 {
 			f(i)
 		} else {
 			go f(i)
 		}
-
 	}
 	wg.Wait()
 
@@ -1008,6 +1048,16 @@ func (ec *executionContext) marshalNUserEdge2ᚖgithubᚗcomᚋ99designsᚋgqlge
 	return ec._UserEdge(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalNUserEdge2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐUserEdgeWithFields(ctx context.Context, fields []graphql.CollectedField, v *models.UserEdge) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalUserEdge(ctx, fields, v)
+}
+
 func (ec *executionContext) unmarshalNUserOrderBy2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐUserOrderBy(ctx context.Context, v any) (models.UserOrderBy, error) {
 	res, err := ec.unmarshalInputUserOrderBy(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
@@ -1028,6 +1078,13 @@ func (ec *executionContext) marshalOUserConnection2ᚖgithubᚗcomᚋ99designs�
 		return graphql.Null
 	}
 	return ec._UserConnection(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOUserConnection2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋbenchmarkᚋgeneratedᚋmodelsᚐUserConnectionWithFields(ctx context.Context, fields []graphql.CollectedField, v *models.UserConnection) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalUserConnection(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

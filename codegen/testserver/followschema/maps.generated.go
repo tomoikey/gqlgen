@@ -340,6 +340,10 @@ var mapNestedImplementors = []string{"MapNested"}
 
 func (ec *executionContext) _MapNested(ctx context.Context, sel ast.SelectionSet, obj *MapNested) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, mapNestedImplementors)
+	return ec._marshalMapNested(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalMapNested(ctx context.Context, fields []graphql.CollectedField, obj *MapNested) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -379,6 +383,10 @@ var mapStringInterfaceTypeImplementors = []string{"MapStringInterfaceType"}
 
 func (ec *executionContext) _MapStringInterfaceType(ctx context.Context, sel ast.SelectionSet, obj map[string]any) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, mapStringInterfaceTypeImplementors)
+	return ec._marshalMapStringInterfaceType(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalMapStringInterfaceType(ctx context.Context, fields []graphql.CollectedField, obj map[string]any) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -454,6 +462,13 @@ func (ec *executionContext) marshalOMapNested2ᚖgithubᚗcomᚋ99designsᚋgqlg
 	return ec._MapNested(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalOMapNested2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐMapNestedWithFields(ctx context.Context, fields []graphql.CollectedField, v *MapNested) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalMapNested(ctx, fields, v)
+}
+
 func (ec *executionContext) unmarshalOMapNestedInput2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐMapNested(ctx context.Context, v any) (*MapNested, error) {
 	if v == nil {
 		return nil, nil
@@ -475,6 +490,10 @@ func (ec *executionContext) marshalOMapStringInterfaceType2map(ctx context.Conte
 		return graphql.Null
 	}
 	return ec._MapStringInterfaceType(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOMapStringInterfaceType2mapWithFields(ctx context.Context, fields []graphql.CollectedField, v map[string]any) graphql.Marshaler {
+	return ec._marshalMapStringInterfaceType(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalONestedMapInput2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐNestedMapInput(ctx context.Context, v any) (*NestedMapInput, error) {

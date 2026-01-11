@@ -228,6 +228,10 @@ var aItImplementors = []string{"AIt"}
 
 func (ec *executionContext) _AIt(ctx context.Context, sel ast.SelectionSet, obj *AIt) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, aItImplementors)
+	return ec._marshalAIt(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalAIt(ctx context.Context, fields []graphql.CollectedField, obj *AIt) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -267,6 +271,10 @@ var abItImplementors = []string{"AbIt"}
 
 func (ec *executionContext) _AbIt(ctx context.Context, sel ast.SelectionSet, obj *AbIt) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, abItImplementors)
+	return ec._marshalAbIt(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalAbIt(ctx context.Context, fields []graphql.CollectedField, obj *AbIt) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -306,6 +314,10 @@ var xXItImplementors = []string{"XXIt"}
 
 func (ec *executionContext) _XXIt(ctx context.Context, sel ast.SelectionSet, obj *XXIt) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, xXItImplementors)
+	return ec._marshalXXIt(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalXXIt(ctx context.Context, fields []graphql.CollectedField, obj *XXIt) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -345,6 +357,10 @@ var xxItImplementors = []string{"XxIt"}
 
 func (ec *executionContext) _XxIt(ctx context.Context, sel ast.SelectionSet, obj *XxIt) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, xxItImplementors)
+	return ec._marshalXxIt(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalXxIt(ctx context.Context, fields []graphql.CollectedField, obj *XxIt) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -384,6 +400,10 @@ var asdfItImplementors = []string{"asdfIt"}
 
 func (ec *executionContext) _asdfIt(ctx context.Context, sel ast.SelectionSet, obj *AsdfIt) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, asdfItImplementors)
+	return ec._marshalasdfIt(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalasdfIt(ctx context.Context, fields []graphql.CollectedField, obj *AsdfIt) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -423,6 +443,10 @@ var iItImplementors = []string{"iIt"}
 
 func (ec *executionContext) _iIt(ctx context.Context, sel ast.SelectionSet, obj *IIt) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, iItImplementors)
+	return ec._marshaliIt(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshaliIt(ctx context.Context, fields []graphql.CollectedField, obj *IIt) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)

@@ -166,6 +166,10 @@ var slicesImplementors = []string{"Slices"}
 
 func (ec *executionContext) _Slices(ctx context.Context, sel ast.SelectionSet, obj *Slices) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, slicesImplementors)
+	return ec._marshalSlices(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalSlices(ctx context.Context, fields []graphql.CollectedField, obj *Slices) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -241,6 +245,13 @@ func (ec *executionContext) marshalOSlices2ᚖgithubᚗcomᚋ99designsᚋgqlgen�
 		return graphql.Null
 	}
 	return ec._Slices(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOSlices2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐSlicesWithFields(ctx context.Context, fields []graphql.CollectedField, v *Slices) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalSlices(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

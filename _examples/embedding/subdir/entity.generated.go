@@ -72,6 +72,10 @@ var _ServiceImplementors = []string{"_Service"}
 
 func (ec *executionContext) __Service(ctx context.Context, sel ast.SelectionSet, obj *fedruntime.Service) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, _ServiceImplementors)
+	return ec._marshal_Service(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshal_Service(ctx context.Context, fields []graphql.CollectedField, obj *fedruntime.Service) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -110,6 +114,10 @@ func (ec *executionContext) __Service(ctx context.Context, sel ast.SelectionSet,
 
 func (ec *executionContext) marshalN_Service2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋfedruntimeᚐService(ctx context.Context, sel ast.SelectionSet, v fedruntime.Service) graphql.Marshaler {
 	return ec.__Service(ctx, sel, &v)
+}
+
+func (ec *executionContext) _marshalN_Service2githubᚗcomᚋ99designsᚋgqlgenᚋpluginᚋfederationᚋfedruntimeᚐServiceWithFields(ctx context.Context, fields []graphql.CollectedField, v fedruntime.Service) graphql.Marshaler {
+	return ec._marshal_Service(ctx, fields, &v)
 }
 
 // endregion ***************************** type.gotpl *****************************

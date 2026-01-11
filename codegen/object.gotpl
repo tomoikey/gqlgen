@@ -34,12 +34,33 @@ func (ec *executionContext) _{{$object.Name}}(ctx context.Context, sel ast.Selec
 }
 {{- else }}
 
+{{- if $object.Root }}
 {{ if $useFunctionSyntaxForExecutionContext -}}
-func _{{$object.Name}}(ctx context.Context, ec *executionContext, sel ast.SelectionSet{{ if not $object.Root }},obj {{$object.Reference | ref }}{{ end }}) graphql.Marshaler {
+func _{{$object.Name}}(ctx context.Context, ec *executionContext, sel ast.SelectionSet) graphql.Marshaler {
 {{- else -}}
-func (ec *executionContext) _{{$object.Name}}(ctx context.Context, sel ast.SelectionSet{{ if not $object.Root }},obj {{$object.Reference | ref }}{{ end }}) graphql.Marshaler {
+func (ec *executionContext) _{{$object.Name}}(ctx context.Context, sel ast.SelectionSet) graphql.Marshaler {
 {{- end }}
 	fields := graphql.CollectFields(ec.OperationContext, sel, {{$object.Name|lcFirst}}Implementors)
+{{- else }}
+{{ if $useFunctionSyntaxForExecutionContext -}}
+func _{{$object.Name}}(ctx context.Context, ec *executionContext, sel ast.SelectionSet, obj {{$object.Reference | ref }}) graphql.Marshaler {
+{{- else -}}
+func (ec *executionContext) _{{$object.Name}}(ctx context.Context, sel ast.SelectionSet, obj {{$object.Reference | ref }}) graphql.Marshaler {
+{{- end }}
+	fields := graphql.CollectFields(ec.OperationContext, sel, {{$object.Name|lcFirst}}Implementors)
+	{{ if $useFunctionSyntaxForExecutionContext -}}
+	return _marshal{{$object.Name}}(ctx, ec, fields, obj)
+	{{- else -}}
+	return ec._marshal{{$object.Name}}(ctx, fields, obj)
+	{{- end }}
+}
+
+{{ if $useFunctionSyntaxForExecutionContext -}}
+func _marshal{{$object.Name}}(ctx context.Context, ec *executionContext, fields []graphql.CollectedField, obj {{$object.Reference | ref }}) graphql.Marshaler {
+{{- else -}}
+func (ec *executionContext) _marshal{{$object.Name}}(ctx context.Context, fields []graphql.CollectedField, obj {{$object.Reference | ref }}) graphql.Marshaler {
+{{- end }}
+{{- end }}
 	{{- if $object.Root }}
 		ctx = graphql.WithFieldContext(ctx, &graphql.FieldContext{
 			Object: {{$object.Name|quote}},

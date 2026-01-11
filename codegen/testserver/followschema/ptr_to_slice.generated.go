@@ -73,6 +73,10 @@ var ptrToSliceContainerImplementors = []string{"PtrToSliceContainer"}
 
 func (ec *executionContext) _PtrToSliceContainer(ctx context.Context, sel ast.SelectionSet, obj *PtrToSliceContainer) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, ptrToSliceContainerImplementors)
+	return ec._marshalPtrToSliceContainer(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalPtrToSliceContainer(ctx context.Context, fields []graphql.CollectedField, obj *PtrToSliceContainer) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -113,6 +117,10 @@ func (ec *executionContext) marshalNPtrToSliceContainer2githubᚗcomᚋ99designs
 	return ec._PtrToSliceContainer(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalNPtrToSliceContainer2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToSliceContainerWithFields(ctx context.Context, fields []graphql.CollectedField, v PtrToSliceContainer) graphql.Marshaler {
+	return ec._marshalPtrToSliceContainer(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalNPtrToSliceContainer2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToSliceContainer(ctx context.Context, sel ast.SelectionSet, v *PtrToSliceContainer) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -121,6 +129,16 @@ func (ec *executionContext) marshalNPtrToSliceContainer2ᚖgithubᚗcomᚋ99desi
 		return graphql.Null
 	}
 	return ec._PtrToSliceContainer(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalNPtrToSliceContainer2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToSliceContainerWithFields(ctx context.Context, fields []graphql.CollectedField, v *PtrToSliceContainer) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalPtrToSliceContainer(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

@@ -104,6 +104,10 @@ var skipIncludeTestTypeImplementors = []string{"SkipIncludeTestType"}
 
 func (ec *executionContext) _SkipIncludeTestType(ctx context.Context, sel ast.SelectionSet, obj *SkipIncludeTestType) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, skipIncludeTestTypeImplementors)
+	return ec._marshalSkipIncludeTestType(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalSkipIncludeTestType(ctx context.Context, fields []graphql.CollectedField, obj *SkipIncludeTestType) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -147,6 +151,13 @@ func (ec *executionContext) marshalOSkipIncludeTestType2ᚖgithubᚗcomᚋ99desi
 		return graphql.Null
 	}
 	return ec._SkipIncludeTestType(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOSkipIncludeTestType2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐSkipIncludeTestTypeWithFields(ctx context.Context, fields []graphql.CollectedField, v *SkipIncludeTestType) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalSkipIncludeTestType(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

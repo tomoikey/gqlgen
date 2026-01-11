@@ -387,6 +387,10 @@ var defaultParametersMirrorImplementors = []string{"DefaultParametersMirror"}
 
 func (ec *executionContext) _DefaultParametersMirror(ctx context.Context, sel ast.SelectionSet, obj *DefaultParametersMirror) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, defaultParametersMirrorImplementors)
+	return ec._marshalDefaultParametersMirror(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalDefaultParametersMirror(ctx context.Context, fields []graphql.CollectedField, obj *DefaultParametersMirror) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -504,6 +508,10 @@ func (ec *executionContext) marshalNDefaultParametersMirror2githubᚗcomᚋ99des
 	return ec._DefaultParametersMirror(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalNDefaultParametersMirror2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐDefaultParametersMirrorWithFields(ctx context.Context, fields []graphql.CollectedField, v DefaultParametersMirror) graphql.Marshaler {
+	return ec._marshalDefaultParametersMirror(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalNDefaultParametersMirror2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐDefaultParametersMirror(ctx context.Context, sel ast.SelectionSet, v *DefaultParametersMirror) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -512,6 +520,16 @@ func (ec *executionContext) marshalNDefaultParametersMirror2ᚖgithubᚗcomᚋ99
 		return graphql.Null
 	}
 	return ec._DefaultParametersMirror(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalNDefaultParametersMirror2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐDefaultParametersMirrorWithFields(ctx context.Context, fields []graphql.CollectedField, v *DefaultParametersMirror) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalDefaultParametersMirror(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

@@ -623,6 +623,10 @@ var content_PostImplementors = []string{"Content_Post", "Content_Child"}
 
 func (ec *executionContext) _Content_Post(ctx context.Context, sel ast.SelectionSet, obj *ContentPost) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, content_PostImplementors)
+	return ec._marshalContent_Post(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalContent_Post(ctx context.Context, fields []graphql.CollectedField, obj *ContentPost) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -659,6 +663,10 @@ var content_UserImplementors = []string{"Content_User", "Content_Child"}
 
 func (ec *executionContext) _Content_User(ctx context.Context, sel ast.SelectionSet, obj *ContentUser) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, content_UserImplementors)
+	return ec._marshalContent_User(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalContent_User(ctx context.Context, fields []graphql.CollectedField, obj *ContentUser) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -695,6 +703,10 @@ var validTypeImplementors = []string{"ValidType"}
 
 func (ec *executionContext) _ValidType(ctx context.Context, sel ast.SelectionSet, obj *ValidType) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, validTypeImplementors)
+	return ec._marshalValidType(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalValidType(ctx context.Context, fields []graphql.CollectedField, obj *ValidType) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -762,6 +774,13 @@ func (ec *executionContext) marshalOValidType2ᚖgithubᚗcomᚋ99designsᚋgqlg
 		return graphql.Null
 	}
 	return ec._ValidType(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOValidType2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐValidTypeWithFields(ctx context.Context, fields []graphql.CollectedField, v *ValidType) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalValidType(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

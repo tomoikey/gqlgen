@@ -561,6 +561,10 @@ var objectDirectivesImplementors = []string{"ObjectDirectives"}
 
 func (ec *executionContext) _ObjectDirectives(ctx context.Context, sel ast.SelectionSet, obj *ObjectDirectives) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, objectDirectivesImplementors)
+	return ec._marshalObjectDirectives(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalObjectDirectives(ctx context.Context, fields []graphql.CollectedField, obj *ObjectDirectives) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -607,6 +611,10 @@ var objectDirectivesWithCustomGoModelImplementors = []string{"ObjectDirectivesWi
 
 func (ec *executionContext) _ObjectDirectivesWithCustomGoModel(ctx context.Context, sel ast.SelectionSet, obj *ObjectDirectivesWithCustomGoModel) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, objectDirectivesWithCustomGoModelImplementors)
+	return ec._marshalObjectDirectivesWithCustomGoModel(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalObjectDirectivesWithCustomGoModel(ctx context.Context, fields []graphql.CollectedField, obj *ObjectDirectivesWithCustomGoModel) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -676,11 +684,25 @@ func (ec *executionContext) marshalOObjectDirectives2ᚖgithubᚗcomᚋ99designs
 	return ec._ObjectDirectives(ctx, sel, v)
 }
 
+func (ec *executionContext) _marshalOObjectDirectives2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐObjectDirectivesWithFields(ctx context.Context, fields []graphql.CollectedField, v *ObjectDirectives) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalObjectDirectives(ctx, fields, v)
+}
+
 func (ec *executionContext) marshalOObjectDirectivesWithCustomGoModel2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐObjectDirectivesWithCustomGoModel(ctx context.Context, sel ast.SelectionSet, v *ObjectDirectivesWithCustomGoModel) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return ec._ObjectDirectivesWithCustomGoModel(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOObjectDirectivesWithCustomGoModel2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐObjectDirectivesWithCustomGoModelWithFields(ctx context.Context, fields []graphql.CollectedField, v *ObjectDirectivesWithCustomGoModel) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalObjectDirectivesWithCustomGoModel(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************

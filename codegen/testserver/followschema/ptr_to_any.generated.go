@@ -104,6 +104,10 @@ var ptrToAnyContainerImplementors = []string{"PtrToAnyContainer"}
 
 func (ec *executionContext) _PtrToAnyContainer(ctx context.Context, sel ast.SelectionSet, obj *PtrToAnyContainer) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, ptrToAnyContainerImplementors)
+	return ec._marshalPtrToAnyContainer(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalPtrToAnyContainer(ctx context.Context, fields []graphql.CollectedField, obj *PtrToAnyContainer) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -146,6 +150,10 @@ func (ec *executionContext) marshalNPtrToAnyContainer2githubᚗcomᚋ99designs�
 	return ec._PtrToAnyContainer(ctx, sel, &v)
 }
 
+func (ec *executionContext) _marshalNPtrToAnyContainer2githubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToAnyContainerWithFields(ctx context.Context, fields []graphql.CollectedField, v PtrToAnyContainer) graphql.Marshaler {
+	return ec._marshalPtrToAnyContainer(ctx, fields, &v)
+}
+
 func (ec *executionContext) marshalNPtrToAnyContainer2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToAnyContainer(ctx context.Context, sel ast.SelectionSet, v *PtrToAnyContainer) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -154,6 +162,16 @@ func (ec *executionContext) marshalNPtrToAnyContainer2ᚖgithubᚗcomᚋ99design
 		return graphql.Null
 	}
 	return ec._PtrToAnyContainer(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalNPtrToAnyContainer2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐPtrToAnyContainerWithFields(ctx context.Context, fields []graphql.CollectedField, v *PtrToAnyContainer) graphql.Marshaler {
+	if v == nil {
+		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
+			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
+		}
+		return graphql.Null
+	}
+	return ec._marshalPtrToAnyContainer(ctx, fields, v)
 }
 
 func (ec *executionContext) unmarshalOAny2interface(ctx context.Context, v any) (any, error) {

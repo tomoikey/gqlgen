@@ -201,6 +201,10 @@ var overlappingFieldsImplementors = []string{"OverlappingFields"}
 
 func (ec *executionContext) _OverlappingFields(ctx context.Context, sel ast.SelectionSet, obj *OverlappingFields) graphql.Marshaler {
 	fields := graphql.CollectFields(ec.OperationContext, sel, overlappingFieldsImplementors)
+	return ec._marshalOverlappingFields(ctx, fields, obj)
+}
+
+func (ec *executionContext) _marshalOverlappingFields(ctx context.Context, fields []graphql.CollectedField, obj *OverlappingFields) graphql.Marshaler {
 
 	out := graphql.NewFieldSet(fields)
 	deferred := make(map[string]*graphql.FieldSet)
@@ -296,6 +300,13 @@ func (ec *executionContext) marshalOOverlappingFields2ᚖgithubᚗcomᚋ99design
 		return graphql.Null
 	}
 	return ec._OverlappingFields(ctx, sel, v)
+}
+
+func (ec *executionContext) _marshalOOverlappingFields2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋcodegenᚋtestserverᚋfollowschemaᚐOverlappingFieldsWithFields(ctx context.Context, fields []graphql.CollectedField, v *OverlappingFields) graphql.Marshaler {
+	if v == nil {
+		return graphql.Null
+	}
+	return ec._marshalOverlappingFields(ctx, fields, v)
 }
 
 // endregion ***************************** type.gotpl *****************************
