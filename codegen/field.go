@@ -96,6 +96,13 @@ func (b *builder) buildField(obj *Object, field *ast.FieldDefinition) (*Field, e
 		f.TypeReference = b.Binder.PointerTo(f.TypeReference)
 	}
 
+	// Set Batch flag from config (independent of resolver setting)
+	if fieldCfg, ok := b.Config.Models[obj.Name]; ok {
+		if fieldEntry, ok := fieldCfg.Fields[field.Name]; ok {
+			f.Batch = fieldEntry.Batch
+		}
+	}
+
 	return &f, nil
 }
 
