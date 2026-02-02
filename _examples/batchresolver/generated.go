@@ -570,8 +570,7 @@ func (ec *executionContext) resolveBatch_User_nullableBatch(ctx context.Context,
 					key = field.Name
 				}
 				result := group.GetFieldResult(key, func() (any, error) {
-					results, err := resolver.NullableBatch(ctx, parents)
-					return results, err
+					return resolver.NullableBatch(ctx, parents)
 				})
 				if result.Err != nil {
 					if batchErrs, ok := result.Err.(graphql.BatchErrors); ok {
@@ -782,8 +781,7 @@ func (ec *executionContext) resolveBatch_User_nullableBatchWithArg(ctx context.C
 					key = field.Name
 				}
 				result := group.GetFieldResult(key, func() (any, error) {
-					results, err := resolver.NullableBatchWithArg(ctx, parents, fc.Args["offset"].(int))
-					return results, err
+					return resolver.NullableBatchWithArg(ctx, parents, fc.Args["offset"].(int))
 				})
 				if result.Err != nil {
 					if batchErrs, ok := result.Err.(graphql.BatchErrors); ok {
@@ -994,8 +992,7 @@ func (ec *executionContext) resolveBatch_User_nonNullableBatch(ctx context.Conte
 					key = field.Name
 				}
 				result := group.GetFieldResult(key, func() (any, error) {
-					results, err := resolver.NonNullableBatch(ctx, parents)
-					return results, err
+					return resolver.NonNullableBatch(ctx, parents)
 				})
 				if result.Err != nil {
 					if batchErrs, ok := result.Err.(graphql.BatchErrors); ok {
